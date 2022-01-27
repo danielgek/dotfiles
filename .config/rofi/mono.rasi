@@ -1,0 +1,81 @@
+configuration {
+  show-icons: true;
+  font: "Operator Mono 12";
+  drun-display-format: "{icon}{name}";
+  display-run: " ";
+  display-drun: " ";
+  display-window: " ";
+  modi: "window,run,drun";
+}
+
+* {
+  background-color: #1f2430f3;
+  bg-alt: #ffcc66;
+  fg: #ECEFF4;
+
+  nord-blue-light: #1f2430f3;
+  nord-yellow: #ffcc66;
+
+  border: 0;
+  lines: 12;
+  padding: 2;
+  margin: 0;
+  spacing: 2;
+
+  border-radius: 4;
+
+}
+
+window {
+  width: 450;
+  transparency: "real";
+  border-radius: 0;
+  border: 1;
+  border-color: #ffcc66;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+listview {
+  columns: 1;
+}
+
+element {
+  padding: 12;
+  orientation: vertical;
+  text-color: @fg;
+}
+
+element selected {
+  background-color: @bg-alt;
+  text-color: @nord-blue-light;
+}
+
+inputbar {
+  background-color: @background;
+  children: [textbox-prompt-colon, entry, case-indicator];
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: " $> ";
+  font: "SauceCodePro Nerd Font 12";
+	text-color: @nord-yellow;
+  padding: 12 0 0 12;
+}
+
+prompt {
+  enabled: true;
+  font: "SauceCodePro Nerd Font 12";
+  padding: 12 0 0 12;
+  text-color: @nord-yellow;
+}
+
+entry {
+  padding: 12;
+  text-color: @nord-yellow;
+}
+
+
