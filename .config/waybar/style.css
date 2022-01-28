@@ -1,0 +1,71 @@
+* {
+    font-family:  'Roboto', 'MaterialDesignIcons', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: #1f2430;
+    border-bottom: solid 2px #707a8c;
+}
+
+#workspaces,
+#language,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#disk,
+#mode,
+#idle_inhibitor,
+#custom-power,
+#window
+{
+    color: #707a8c;
+    padding: 0px;
+    margin-right:12px;
+
+}
+
+#custom-power {
+    margin-right: 6px;
+}
+
+#language {
+}
+
+#idle_inhibitor {
+}
+
+#workspaces {
+    font-size: 16px;
+}
+
+#workspaces button {
+    padding: 0;
+    color: #707a8c;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+#workspaces button.focused {
+    color: #ffcc66;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#network.disconnected,
+#temperature.critical,
+#pulseaudio.muted,
+#idle_inhibitor.activated {
+    background-color: rgb(245, 98, 36);
+}

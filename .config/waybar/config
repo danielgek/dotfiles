@@ -1,0 +1,147 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "temperature",
+        "sway/language",
+        "cpu",
+        "memory",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "<span font='16'>{icon}</span>",
+        "format-icons": {
+            "1": "󰎤",
+            "2": "󰎧",
+            "3": "󰎪",
+            "4": "󰎭",
+            "5": "󰎱",
+            "6": "󰎳",
+            "7": "󰎶",
+            "8": "󰎹",
+            "9": "󰎼",
+            "10": "󰎡",
+            "urgent": "U",
+            "focused": "F",
+            "default": "D"
+        },
+
+        "smooth-scrolling-threshold": 1
+    },
+    "sway/window": {
+        "max-length": 35
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/language": {
+        "format": "<span font='16'>󰉀</span> {short}"
+    },
+    "clock": {
+        "format": "{:%R}",
+        "tooltip-format": "{:%R %a %d/%m/%Y}"
+    },
+    "cpu": {
+        "format": "<span font='16'>󰍛</span>{usage}%"
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp2_input",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "<span font='16'>{icon}</span>{temperatureC}°C ",
+        "format-icons": [
+            ""
+        ]
+    },
+    "memory": {
+        "format": "<span font='16'>󰘚</span> {used:0.2f}/{total:0.2f}"
+    },
+    "network": {
+        "format-wifi": "<span font='16'>{icon}</span> {essid}({signalStrength}%)",
+        "format-ethernet": "{ifname} ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰤮",
+        "format-icons":  ["󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "pulseaudio": {
+        "format": "<span font='16'>{icon}</span> {volume}%",
+        "format-bluetooth": "{icon} {volume}% ",
+        "format-muted": "<span font='16'>󰖁</span> muted",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "hdmi": "﴿",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "hifi": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "Act",
+            "deactivated": "Deact"
+        }
+    },
+    "tray": {
+        "_icon-size": 21,
+        "spacing": 10
+    },
+    "custom/power": {
+        "format": "<span font='16'>󰤆</span>",
+        "tooltip": false,
+        "on-click": "exec $HOME/.config/bin/power_menu.sh"
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": {
+            "charging": ["󰂆","󰂇","󰂈","󰂉","󰂊","󰂋","󰂅"],
+            "default": ["󰂃","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
+        },
+        "format": "<span font='16'>{icon}</span> {capacity}%",
+        "max-length": 25
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "<span font='16'>{icon}</span> {percent}%",
+        "format-icons": ["󰌵"],
+        "smooth-scrolling-threshold": 1,
+        "on-scroll-up": "light -S \"$(light -G | awk '{ print int(($1 + .72) * 1.4) }')\"",
+        "on-scroll-down": "light -S \"$(light -G | awk '{ print int($1 / 1.4) }')\""
+    }
+}

@@ -1,0 +1,64 @@
+* {
+    font-family:  'Roboto', 'Droid Sans Mono Nerd Font', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    caret-color: #ffcc66;
+    foreground-color: #ff0000;
+}
+
+
+#window {
+    margin: 0px;
+    border: 1px solid;
+    border-color: #ffcc66;
+    border-radius: 0px;
+    background-color: #1f2430;
+    color:  #ffffff;
+}
+
+#input:placeholder-text {
+    color: #ffcc66;
+}
+
+#input {
+    margin: 12px;
+    color: #ffcc66;
+    border-radius: 0px;
+    background-color: #1f2430;
+    border: none;
+    box-shadow: none;
+}
+
+#scroll {
+    margin-bottom: 15px;
+}
+
+#entry {
+    padding: 12px;
+    border-radius: 4px;
+}
+
+#entry:selected {
+    background-color: #ffcc66;
+    border-radius: 0px;
+    border: none;
+    outline: none;
+    color: #1f2430;
+}
+
+#entry > box {
+    margin-left: 0px;
+}
+
+#entry image {
+    padding-right: 10px;
+}
+
+#colors {
+    color: #1f2430;
+    color: rgb(52, 64, 76);
+    color: rgb(76, 90, 107);
+    color: rgb(112, 122, 137);
+    color: #ffcc66;
+    color: rgb(245, 98, 36);
+}
